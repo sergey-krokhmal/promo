@@ -1,3 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Circe', sans-serif;
+    color: white;
+}
+
 .main {
     background-image: url('/assets/images/png/bg.png');
     position: fixed;
@@ -20,6 +27,11 @@
 }
 
 @keyframes car-move {
-from {left: -100%;}
-to {left:0;}
+    from {left: -100%;}
+    to {left:0;}
+}
+
+/* Bootstrap padding fixes*/
+.container, .container-fluid {
+    padding: 0;
 }
