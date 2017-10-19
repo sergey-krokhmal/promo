@@ -20,20 +20,20 @@ body {
     color: #186e99;
 }
 
-.main-promo .bg-part-1 {
+.main-promo .bg-part-light {
     top: 20%;
     left: 5%;
     transform: rotate(-10deg);
 }
 
-.main-promo .bg-part-2 {
+.main-promo .bg-part-dashboard {
     top: 12%;
     left: 40%;
     transform: rotate(7deg);
     font-size: 32px;
 }
 
-.main-promo .bg-part-3 {
+.main-promo .bg-part-map-location {
     top: 45%;
     left: 2%;
     transform: rotate(25deg);
@@ -41,26 +41,26 @@ body {
     font-size: 50px;
 }
 
-.main-promo .bg-part-4 {
+.main-promo .bg-part-speed-limit {
     top: 72%;
     left: 22%;
     transform: rotate(-40deg);
     font-size: 45px;
 }
 
-.main-promo .bg-part-5 {
+.main-promo .bg-part-gearbox-2 {
     top: 85%;
     left: 10%;
     font-size: 45px;
 }
 
-.main-promo .bg-part-6 {
+.main-promo .bg-part-gearbox {
     top: 19%;
     right: 32%;
     font-size: 48px;
 }
 
-.main-promo .bg-part-7 {
+.main-promo .bg-part-traffic-light {
     top: 7%;
     right: 4%;
     transform: rotate(10deg);
@@ -68,14 +68,14 @@ body {
     font-size: 50px;
 }
 
-.main-promo .bg-part-8 {
+.main-promo .bg-part-mechanics {
     top: 74%;
     right: 31%;
     transform: rotate(12deg);
     font-size: 45px;
 }
 
-.main-promo .bg-part-9 {
+.main-promo .bg-part-steering-wheel {
     bottom: 7%;
     right: 7%;
     font-size: 47px;
@@ -88,7 +88,7 @@ body {
 .animated-promo-car {
     /*background-image: url('/assets/images/png/car.png');
     background-repeat: no-repeat;*/
-    max-width: 1420px;
+    /*max-width: 1420px;*/
     height: auto;
     animation: car-move 1s 1;
     animation-timing-function: ease-out;
@@ -98,8 +98,12 @@ body {
 }
 
 @keyframes car-move {
-    from {left: -100%;}
-    to {left:0;}
+    from {
+        left: -100%;
+    }
+    to {
+        left:0;
+    }
 }
 
 .promo-content {
@@ -120,6 +124,11 @@ body {
 
 .gerb-text {
     float: right;
+}
+
+.main-info {
+    position: absolute;
+    top: 28%;
 }
 
 /* Bootstrap padding fixes*/
