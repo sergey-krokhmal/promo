@@ -82,19 +82,24 @@ body {
 }
 
 .reg-promo-page {
-    background: rgba(255, 255, 255, 0.17);
+    background: rgba(73, 247, 255, 0.17)
 }
 
 .animated-promo-car {
-    /*background-image: url('/assets/images/png/car.png');
-    background-repeat: no-repeat;*/
-    /*max-width: 1420px;*/
-    height: auto;
-    animation: car-move 1s 1;
+    background: url(/assets/images/png/car.png) no-repeat;
+    height: 326px;
+    width: 1462px;
+    position: absolute;
+    animation: car-move 0.7s forwards;
     animation-timing-function: ease-out;
+    transform: translateY(-50%);
+}
+
+.promo-content {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    left: 0;
+    right: 0;
 }
 
 @keyframes car-move {
@@ -102,15 +107,26 @@ body {
         left: -100%;
     }
     to {
-        left:0;
+        left: 0;
     }
 }
 
-.promo-content {
-    padding: 0 130px;
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.promo-content header {
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+.header-content {
+    margin: 0 130px;
     padding-top: 42px;
 }
 
@@ -127,8 +143,101 @@ body {
 }
 
 .main-info {
+    margin-left: 130px;
+    width: 419px;
+    opacity: 0;
+    animation: fade-in 1s forwards 0.7s;
+}
+
+.start-soon {
+    font-size: 24pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 40px;
+}
+
+.main-info-description {
+    font-size: 20pt;
+    font-weight: 600;
+    margin-top: 38px;
+    letter-spacing: 1px;
+}
+
+.start-date {
+    color: #16475b;
+    margin-top: 40px;
+}
+
+.main-info-calendar {
+    font-size: 31pt;
+    margin-left: -7px;
+    float: left;
+}
+
+.start-date-text {
+    font-size: 13pt;
+    font-weight: 600;
+    margin-left: 8px;
+    float: left;
+}
+
+.main-promo-price {
     position: absolute;
-    top: 28%;
+    bottom: 47px;
+    left: 0;
+    right: 0;
+}
+
+.main-promo-price .text {
+    text-align: center;
+}
+
+.main-promo-price-free {
+    font-size: 16pt;
+    font-weight: 600;
+    line-height: 20pt;
+}
+
+.main-promo-price-tariff {
+    margin: 7px;
+    font-size: 11pt;
+}
+
+.reg-promo-page {
+
+}
+
+.reg-form-container {
+    font-family: 'Circe', sans-serif !important;
+    margin-top: 140px;
+}
+
+.reg-form-name {
+    font-weight: 600;
+    color: #114867;
+    font-size: 22pt;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.reg-form-free {
+    font-weight: 600;
+    color: #f63b8d;
+    font-size: 16pt;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.registration-from {
+    margin-top: 50px;
+}
+
+.reg-form-inputs .text-input {
+    outline: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #7fc9e1;
 }
 
 /* Bootstrap padding fixes*/
