@@ -9,6 +9,9 @@ body {
     /*background-image: url('/assets/images/png/bg.png');*/
 	background: url('/assets/images/png/bg.png') center center no-repeat;
     background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -238,6 +241,10 @@ header {
     background: none;
     border: none;
     border-bottom: 2px solid #7fc9e1;
+}
+
+.reg-form-inputs .input-container {
+    text-align: center;
 }
 
 /* Bootstrap padding fixes*/
