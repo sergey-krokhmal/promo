@@ -240,11 +240,14 @@ header {
     outline: none;
     background: none;
     border: none;
-    border-bottom: 2px solid #7fc9e1;
+    border-bottom: 2px solid #62c6e2;
+    width: 200px;
+    font-size: 13pt;
 }
 
 .reg-form-inputs .input-container {
     text-align: center;
+    padding-bottom:20px;
 }
 
 /* Bootstrap padding fixes*/
