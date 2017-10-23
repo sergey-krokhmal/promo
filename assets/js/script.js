@@ -1,6 +1,10 @@
 $(document).ready(function(){
     //$(".phone-mask").mask("+7 (999) 999-9999");
     
+    $(".onepage-scroll-wrapper").onepage_scroll({
+        pagination: false,
+    });
+    
     wheel = $('.reg-promo-page .steering-wheel');
     if (wheel.length > 0) {
         var offset = wheel.offset();

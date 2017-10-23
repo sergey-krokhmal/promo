@@ -7,7 +7,7 @@ body {
 
 .main-promo {
     /*background-image: url('/assets/images/png/bg.png');*/
-	background: url('/assets/images/png/bg.png') center center no-repeat;
+	background: url('../images/png/bg.png') center center no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -132,7 +132,7 @@ body {
 }
 
 .animated-promo-car {
-    background: url(/assets/images/png/car.png) no-repeat;
+    background: url(../images/png/car.png) no-repeat;
     height: 326px;
     width: 1462px;
     position: absolute;
