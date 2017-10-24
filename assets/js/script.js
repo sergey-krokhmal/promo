@@ -22,3 +22,44 @@ $(document).ready(function(){
         $(document).mousemove(mouse);
     }
 });
+
+function submit_registration() {
+    fio = $('[name="fio"]').val();
+    phone = $('[name="phone"]').val().replace('+');
+    email = $('[name="email"]').val();
+    pass = $('[name="password"]').val();
+    pass_repeat = $('[name="password_repeat"]').val();
+    fio_parts = fio.split('/\s*/');
+    f = '';
+    i = '';
+    o = '';
+    if (fio_parts[0] !== undefined) {
+        f = fio_parts[0];
+    }
+    if (fio_parts[1] !== undefined) {
+        i = fio_parts[1];
+    }
+    if (fio_parts[2] !== undefined) {
+        o = fio_parts[2];
+    }
+    data = {
+        phone: phone,
+        password: pass,
+        email: email,
+        type: 'phone',
+        name: i,
+        surname: f,
+        fathername: o
+    }
+    $.support.cors = true;
+    $.ajax({
+        method: "POST",
+        url: "http://test-cs.mongeo.ru/api/client/registration",
+        dataType: 'application/json',
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success(data) {
+            
+        }
+    });
+}

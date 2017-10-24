@@ -275,7 +275,7 @@ header {
 
 .main-promo-price {
     position: absolute;
-    bottom: 47px;
+    bottom: 7px;
     left: 0;
     right: 0;
 }
@@ -293,6 +293,10 @@ header {
 .main-promo-price-tariff {
     margin: 7px;
     font-size: 11pt;
+}
+
+.mouse-container {
+    text-align: center;
 }
 
 .reg-form-container {
