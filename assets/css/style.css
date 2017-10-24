@@ -105,7 +105,7 @@ body {
 }
 
 .reg-promo-page {
-    background-color: rgba(73, 247, 255, 0.17);
+    background-color: rgba(156, 251, 255, 0.3);
     position:relative;
 }
 
@@ -365,12 +365,13 @@ header {
     padding-left: 8px;
 }
 
-.reg-form-inputs .submit-container button {
+.cool-button {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 11pt;
     padding: 8px 25px;
     text-transform: uppercase;
+    color: white;
     outline: none;
     border: none;
     border-radius: 3px;
@@ -384,7 +385,7 @@ header {
     box-shadow: 0px 13px 21px -4px rgba(38, 145, 216, 0.6);
 }
 
-.reg-form-inputs .submit-container button:active {
+.cool-button:active {
     transform: translateY(4px);
     background: #f99683;
     background: -moz-linear-gradient(top, #f99683 0%, #f952b0 100%);
@@ -395,7 +396,7 @@ header {
     box-shadow: 0px 3px 8px 0px rgba(38, 145, 216, 0.6);
 }
 
-.reg-form-inputs .submit-container button:hover {
+.cool-button:hover {
     background: #f99683;
     background: -moz-linear-gradient(top, #f99683 0%, #f952b0 100%);
     background: -webkit-linear-gradient(top, #f99683 0%,#f952b0 100%);
@@ -407,8 +408,42 @@ header {
     position: relative;
 }
 
+.promo-code-dialog {
+    color: #434343;
+}
+
+.reg-form-twitter-news {
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    right: 0;
+}
+
+.twitter-news-content {
+    margin: 0 130px;
+}
+
+.twitter-news-content .title {
+    font-size: 16pt;
+    font-weight: 600;
+}
+
+.twitter-news-content .news-block {
+    background-color: white;
+    height: 140px;
+    opacity: 0.5;
+}
+
+.twitter-news-content .news-block:nt-child(n+1) {
+    margin-left: 10px
+}
+
 /* Bootstrap padding fixes*/
 .container, .container-fluid {
     padding: 0;
+}
+
+.row {
+    margin: 0;
 }
 

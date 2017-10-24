@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="assets/libs/jquery/jquery-3.2.1.min.js"></script>
+        <script src="assets/libs/fancybox/jquery.fancybox.min.js"></script>
         <script src="assets/libs/jquery/onepage-scroll/jquery.onepage-scroll.min.js"></script>
         <script src="assets/libs/jquery/jquery.maskedinput.min.js"></script>
         <script src="assets/libs/jquery/phanimate/phanimate.jquery.js"></script>
@@ -11,9 +12,10 @@
         <link rel="stylesheet" href="assets/libs/jquery/onepage-scroll/onepage-scroll.css">
         <link rel="stylesheet" href="assets/libs/jquery/phanimate/style.css">
         <link rel="stylesheet" href="assets/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/libs/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+        <!--link rel="stylesheet" href="assets/libs/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"-->
+        <link rel="stylesheet" href="assets/libs/fancybox/jquery.fancybox.min.css">
         <link rel="stylesheet" href="assets/fonts/svg-font/svg-font.css">
-        
+        <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/fonts/Circe/stylesheet.css">
     </head>
     <body>
@@ -102,12 +104,14 @@
                                             <input type="password" class="text-input" id="repeat-password" name="repeat_password">
                                         </span>
                                     </div>
-                                    <div class="col-sm-6 input-container"></div>
+                                    <div class="col-sm-6 input-container">
+                                        <div class="form-error"></div>
+                                    </div>
                                 </div>
                                 <div class="row reg-form-inputs">
                                     <div class="col-sm-6 input-container">
                                         <div class="submit-container">
-                                            <button type="button" onclick="submit_registration()">Отправить</button>
+                                            <button type="button" class="cool-button" onclick="submit_registration()">Отправить</button>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 input-container">
@@ -126,10 +130,35 @@
                             </form>
                         </div>
                         <div class="col-sm-3"></div>
+                        <div class="reg-form-twitter-news">
+                            <div class="twitter-news-content">
+                                <div class="title">
+                                    <span class="svg-icon-twitter-logo"></span>
+                                    <span>Новости</span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 news-block">
+                                    </div>
+                                    <div class="col-sm-4 news-block">
+                                    </div>
+                                    <div class="col-sm-4 news-block">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
         </div>
-		<link rel="stylesheet" href="assets/css/style.css">
+        <div data-fancybox style="display: none;" class="promo-code-dialog">
+            <h3>Введите код</h3>
+            <input type="hidden" name="promo-code"/>
+            <div class="form-group">
+                <input class="form-control" name="promo-code"/>
+            </div>
+            <div class="form-group">
+                <button type="button" class="cool-button" style="width: 100%" onclick="send_promo_code">Отправить</button>
+            </div>
+        </div>
     </body>
 </html>

@@ -1,7 +1,10 @@
 $(document).ready(function(){
     //$(".phone-mask").mask("+7 (999) 999-9999");
     
-    $(".onepage-scroll-wrapper").onepage_scroll({
+    $('[data-fancybox]').fancybox({
+	});
+    
+    $('.onepage-scroll-wrapper').onepage_scroll({
         pagination: false,
     });
     
@@ -51,7 +54,6 @@ function submit_registration() {
         surname: f,
         fathername: o
     }
-    $.support.cors = true;
     $.ajax({
         method: "POST",
         url: "http://test-cs.mongeo.ru/api/client/registration",
@@ -59,7 +61,35 @@ function submit_registration() {
         contentType: 'application/json',
         data: JSON.stringify(data),
         success(data) {
-            
+            if (data.authKey !== undefined) {
+                show_promo_enter(data.authKey);
+            }
+        }
+    });
+}
+
+function show_promo_enter(authKey) {
+    $('.promo-code-dialog [name="auth-key"]').val(authKey);
+    $.fancybox.open($('.promo-code-dialog'));
+}
+
+function send_promo_code() {
+    var code = $('.promo-code-dialog [name="promo-code"]').val();
+    var auth_key = $('.promo-code-dialog [name="auth-key"]').val();
+    data = {
+        code: code,
+        authKey: auth_key,
+    }
+    $.ajax({
+        method: "PUT",
+        url: "http://test-cs.mongeo.ru/api/client/confirm",
+        dataType: 'application/json',
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success(data) {
+            if (data.success !== undefined && data.success == true) {
+                $.fancybox.close();
+            }
         }
     });
 }
