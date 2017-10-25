@@ -1,3 +1,14 @@
+/* Bootstrap padding fixes*/
+.container, .container-fluid {
+    padding: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+/* end */
+
 body {
     margin: 0;
     padding: 0;
@@ -215,7 +226,7 @@ header {
 }
 .header-content {
     margin: 0 130px;
-    padding-top: 42px;
+    padding-top: 3%;
 }
 
 .logo {
@@ -299,9 +310,12 @@ header {
     text-align: center;
 }
 
+.top-margin-reg-form {
+    min-height: 75px;
+    height: 8%;
+}
 .reg-form-container {
     font-family: 'Circe', sans-serif !important;
-    margin-top: 140px;
 }
 
 .reg-form-name {
@@ -321,7 +335,7 @@ header {
 }
 
 .registration-from {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .reg-form-inputs .text-input {
@@ -428,22 +442,21 @@ header {
     font-weight: 600;
 }
 
+.twitter-news-content .news-blocks {
+    margin-top: 10px;
+}
+
+.twitter-news-content .news-block-container{
+    padding: 0 0 0 20px;
+}
+
+.twitter-news-content .news-block-container:first-child {
+    padding: 0;
+}
+
 .twitter-news-content .news-block {
     background-color: white;
     height: 140px;
     opacity: 0.5;
-}
-
-.twitter-news-content .news-block:nt-child(n+1) {
-    margin-left: 10px
-}
-
-/* Bootstrap padding fixes*/
-.container, .container-fluid {
-    padding: 0;
-}
-
-.row {
-    margin: 0;
 }
 
