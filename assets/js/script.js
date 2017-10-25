@@ -24,6 +24,38 @@ $(document).ready(function(){
         }
         $(document).mousemove(mouse);
     }
+    
+    var cb = new Codebird;
+    cb.setConsumerKey("cVgrzbfD8TioymOgZrr6C1uGT", "tQkGp2PqhF2MZLpqoS58Xx444GGUyakPIgM9t73iVlwADFFr2l");
+    var oauth_token = localStorage.getItem("oauth_token");
+    var oauth_token_secret = localStorage.getItem("oauth_token_secret");
+    /*if (oauth_token && oauth_token_secret) {
+      cb.setToken(oauth_token, oauth_token_secret);
+    } else {*/
+      cb.__call(
+        "oauth_requestToken",
+        {oauth_callback: "oob"},
+        function (reply, rate, err) {
+          if (err) {
+            console.log("error response or timeout exceeded" + err.error);
+          }
+          if (reply) {
+            console.log("reply", reply)
+              // stores it
+            cb.setToken(reply.oauth_token, reply.oauth_token_secret);
+            cb.__call(
+                "statuses_homeTimeline",
+                {oauth_callback: "oob"},
+                function (reply, rate, err) {
+                    console.log(reply);
+                    console.log(err);
+                }
+            );
+          }
+        });
+    /*}*/
+    
+    cb.logout();
 });
 
 function submit_registration() {

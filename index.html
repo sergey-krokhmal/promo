@@ -5,18 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="assets/libs/jquery/jquery-3.2.1.min.js"></script>
         <script src="assets/libs/fancybox/jquery.fancybox.min.js"></script>
-        <script src="assets/libs/jquery/onepage-scroll/jquery.onepage-scroll.min.js"></script>
-        <script src="assets/libs/jquery/jquery.maskedinput.min.js"></script>
-        <script src="assets/libs/jquery/phanimate/phanimate.jquery.js"></script>
+        <script src="assets/libs/onepage-scroll/jquery.onepage-scroll.min.js"></script>
+        <!--script src="assets/libs/jquery.maskedinput.min.js"></script-->
+        <script src="assets/libs/phanimate/phanimate.jquery.js"></script>
+        <script src="assets/libs/codebird.js"></script>
         <script src="assets/js/script.js"></script>
-        <link rel="stylesheet" href="assets/libs/jquery/onepage-scroll/onepage-scroll.css">
-        <link rel="stylesheet" href="assets/libs/jquery/phanimate/style.css">
+        <link rel="stylesheet" href="assets/libs/onepage-scroll/onepage-scroll.css">
+        <link rel="stylesheet" href="assets/libs/phanimate/style.css">
         <link rel="stylesheet" href="assets/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-        <!--link rel="stylesheet" href="assets/libs/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"-->
         <link rel="stylesheet" href="assets/libs/fancybox/jquery.fancybox.min.css">
         <link rel="stylesheet" href="assets/fonts/svg-font/svg-font.css">
-        <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/fonts/Circe/stylesheet.css">
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
         <div class="main-promo">
@@ -61,14 +61,14 @@
                     <div class="top-margin-reg-form"></div>
                     <div class="row reg-form-container">
                         <div class="steering-wheel-container">
-                        <img class="steering-wheel" src="assets/images/png/steering-wheel.png"/>
+                            <img class="steering-wheel" src="assets/images/png/steering-wheel.png"/>
                         </div>
-                        <div class="col-sm-2"></div>
-                        <div class="col-xs-12 col-sm-8">
                             <div class="row">
                                 <h1 class="reg-form-name">Форма предварительной регистрации</h1>
                                 <h2 class="reg-form-free">Получите 30 минут поездки бесплатно!</h2>
                             </div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-xs-12 col-sm-8">
                             <form name="registration-from" class="registration-from">
                                 <div class="row reg-form-inputs">
                                     <div class="col-sm-6 input-container custom-input">
@@ -154,6 +154,7 @@
                 </section>
             </div>
         </div>
+        <div id="twitter"></div>
         <div data-fancybox style="display: none;" class="promo-code-dialog">
             <h3>Введите код</h3>
             <input type="hidden" name="promo-code"/>
