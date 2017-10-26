@@ -1,8 +1,12 @@
 $(document).ready(function(){
-    //$(".phone-mask").mask("+7 (999) 999-9999");
     
-    $('[data-fancybox]').fancybox({
-	});
+    // Ключи для api твиттера. Нужно из менеджере приложений твиттера подставить сюда ключи
+    KEY = "cVgrzbfD8TioymOgZrr6C1uGT";  //Consumer Key (API Key)
+    SECRET = "tQkGp2PqhF2MZLpqoS58Xx444GGUyakPIgM9t73iVlwADFFr2l";  //Consumer Secret (API Secret)
+    TOKEN = "800703805453021184-M9ijpBCO1Cf75DvzIpW8AHN9PENpD6z";   //Access Token
+    TOKEN_SECRET = "bC3gawodaYHzQj7W3tdf0OtqOZJ3SxqMK64Hy6sFVCmyv";  //Access Token Secret
+    
+    $('[data-fancybox]').fancybox({});
     
     $('.onepage-scroll-wrapper').onepage_scroll({
         pagination: false,
@@ -26,13 +30,8 @@ $(document).ready(function(){
     }
     
     var cb = new Codebird;
-    cb.setConsumerKey("cVgrzbfD8TioymOgZrr6C1uGT", "tQkGp2PqhF2MZLpqoS58Xx444GGUyakPIgM9t73iVlwADFFr2l");
-    var oauth_token = localStorage.getItem("oauth_token");
-    var oauth_token_secret = localStorage.getItem("oauth_token_secret");
-    /*if (oauth_token && oauth_token_secret) {
-      cb.setToken(oauth_token, oauth_token_secret);
-    } else {*/
-      cb.__call(
+    cb.setConsumerKey(KEY, SECRET);
+    cb.__call(
         "oauth_requestToken",
         {oauth_callback: "oob"},
         function (reply, rate, err) {
@@ -40,23 +39,43 @@ $(document).ready(function(){
             console.log("error response or timeout exceeded" + err.error);
           }
           if (reply) {
-            console.log("reply", reply)
-              // stores it
-            cb.setToken(reply.oauth_token, reply.oauth_token_secret);
-            cb.__call(
-                "statuses_homeTimeline",
-                {oauth_callback: "oob"},
+            console.log("reqToken", reply);
+              cb.setToken(TOKEN, TOKEN_SECRET);
+              cb.__call(
+                "statuses_userTimeline",
+                "count=3&screen_name=Sergey_Krokhmal",
                 function (reply, rate, err) {
                     console.log(reply);
-                    console.log(err);
+                    for(i = 0; i < reply.length; i++) {
+                        var text = reply[i].text;
+                        for(j = 0; j < reply[i].entities.urls.length; j++) {
+                            console.log(reply[i].entities.urls[j].url);
+                            text = text.replace(new RegExp(reply[i].entities.urls[j].url, 'g'), '<a href="' + reply[i].entities.urls[j].expanded_url + '">' + reply[i].entities.urls[j].display_url + '</a>');
+                        }
+                        formated_date = formatDate(new Date(reply[i].created_at));
+                        $($('.twitter-news-content .news-block')[i]).html('<h4 class="date">'+formated_date+'</h4><div class="news-text">'+text+'</div>');
+                    }
                 }
             );
+              
           }
         });
-    /*}*/
-    
-    cb.logout();
 });
+
+function formatDate(date) {
+    var monthNames = [
+        "Января", "Февраля", "Марта",
+        "Апреля", "Мая", "Июня", "Июля",
+        "Августа", "Сентября", "Октября",
+        "Ноября", "Декабря"
+    ];
+    
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+
+    return day + ' ' + monthNames[monthIndex] + ' ' + year;
+}
 
 function submit_registration() {
     fio = $('[name="fio"]').val();

@@ -231,6 +231,8 @@ header {
 
 .logo {
     font-size: 44px;
+    width: 194px;
+    float: left;
 }
 
 .gerb {
@@ -427,7 +429,8 @@ header {
 }
 
 .reg-form-twitter-news {
-    position: absolute;
+    /*position: absolute;*/
+    position: static;
     bottom: 45px;
     left: 0;
     right: 0;
@@ -435,6 +438,7 @@ header {
 
 .twitter-news-content {
     margin: 0 130px;
+    float: left;
 }
 
 .twitter-news-content .title {
@@ -444,6 +448,7 @@ header {
 
 .twitter-news-content .news-blocks {
     margin-top: 10px;
+    color: #17485c
 }
 
 .twitter-news-content .news-block-container{
@@ -455,8 +460,278 @@ header {
 }
 
 .twitter-news-content .news-block {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
     height: 140px;
-    opacity: 0.5;
+    padding: 18px 25px;
 }
 
+.twitter-news-content .news-block .date {
+    text-transform: lowercase;
+    font-size: 10pt;
+}
+
+.twitter-news-content .news-block .news-text {
+    font-size: 14pt;
+    padding-top: 11px;
+    line-height: 16pt;
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .twitter-news-content .news-block .news-text {
+        font-size: 12pt;
+        padding-top: 11px;
+        line-height: 14pt;
+    }
+}
+
+@media (max-width: 925px) {
+    .header-content {
+        margin: 0 60px;
+    }
+    .main-info {
+        margin-left: 60px;
+    }
+    .twitter-news-content {
+        margin: 0 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        margin: 0 13px;
+    }
+    .main-info {
+        margin-left: 13px;
+    }
+    .main-promo .bg-part{
+        font-size: 30px;
+    }
+    .twitter-news-content {
+        margin: 0px;
+        padding: 0 13px;
+        width: 100%;
+    }
+    
+    .twitter-news-content .news-block .news-text {
+        font-size: 12pt;
+        padding-top: 11px;
+        line-height: 14pt;
+    }
+    .twitter-news-content .news-block {
+        height: 90px;
+    }
+    
+    .twitter-news-content .title {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+    .twitter-news-content .news-block-container:nth-child(n) {
+        padding: 0 20px 10px;
+    }
+    .steering-wheel-container {
+        display: none;
+    }
+    .reg-form-twitter-news {
+        bottom: 16px;
+    }
+    .animated-promo-car {
+        animation: none;
+        -moz-animation: none;
+        -webkit-animation: none;
+        -o-animation: none;
+        background-position: -220px;
+    }
+    .main-info-description {
+        width: 78%;
+    }
+    .start-date-text {
+        width: 60%;
+        font-size: 11pt;
+    }
+    .main-info-calendar {
+        font-size: 26pt;
+    }
+    .main-promo-price-tariff {
+        margin: 4px;
+        font-size: 10pt;
+    }
+    .main-promo-price-free {
+        font-size: 15pt;
+        line-height: 22px;
+    }
+    .reg-form-name {
+        font-size: 16pt;
+        margin-top: 0;
+    }
+    .reg-form-free {
+        font-size: 13pt;
+    }
+    .registration-from {
+        margin-top: 0;
+    }
+    .cool-button {
+        font-size: 9pt;
+    }
+    .reg-form-inputs .input-container {
+        margin-bottom: 10px;
+    }
+    .reg-form-inputs .submit-container {
+        text-align: center;
+        margin: 0;
+    }
+    .reg-form-inputs .checkbox-container label {
+        float: none;
+    }
+}
+
+@media (max-width: 580px) {
+    .gerb {
+        display: none;
+    }
+    .gerb-text {
+        height: 62px;
+        vertical-align: middle;
+        display: table-cell;
+        float: none;
+        padding-left: 20px;
+    }
+    .logo {
+        display: table-cell;
+    }
+}
+
+@media (max-height: 800px) and (max-width: 768px) {
+    .logo {
+        font-size: 35px;
+        width: 154px;
+    }
+    .gerb {
+        font-size: 31px;
+    }
+    .gerb-text {
+        height: 50px;
+    }
+    .mouse-container {
+        display: none;
+    }
+    .reg-form-inputs .input-container {
+        margin-bottom: 5px;
+    }
+    .reg-form-name {
+        font-size: 13pt;
+        margin-top: 3px;
+    }
+    .reg-form-free {
+        font-size: 11pt;
+    }
+    .twitter-news-content .title {
+        font-size: 14pt;
+    }
+    .twitter-news-content .news-blocks {
+        margin-top: 5px;
+    }
+    .twitter-news-content .news-block {
+        padding: 10px 20px;
+        height: 60px;
+    }
+    .twitter-news-content .news-block .date {
+        margin: 0;
+    }
+    .twitter-news-content .news-block .news-text {
+        padding-top: 2px;
+    }
+}
+
+@media (max-height: 642px) and (max-width: 768px) {
+    .cool-button {
+        font-size: 9pt;
+    }
+    .top-margin-reg-form {
+        height: 46px;
+        min-height: 0;
+    }
+    .header-content {
+        padding-top: 5px;
+    }
+    .reg-form-free {
+        font-size: 9pt;
+        margin: 0px;
+        height: 14px;
+    }
+    .custom-input label {
+        font-size: 11px;
+    }
+    .custom-input label.active {
+        top: -5px;
+        font-size: 9px;
+    }
+    .reg-form-inputs .text-input {
+        font-size: 11pt;
+        height: 13px;
+    }
+    .reg-form-inputs .checkbox-container .checkbox-input-label {
+        font-size: 8pt;
+    }
+    .reg-form-twitter-news {
+        bottom: 7px;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        font-size: 35px;
+        width: 154px;
+    }
+    .gerb-text {
+        height: 50px;
+    }
+    .animated-promo-car {
+        height: 294px;
+        width: 100%;
+        background: #ff7b53;
+        background: url('../images/png/mobile-car.png') bottom right no-repeat, -webkit-linear-gradient(-45deg, #ff7b53 0%,#f41a8b 100%);
+        background: url('../images/png/mobile-car.png') bottom right no-repeat, linear-gradient(135deg, #ff7b53 0%,#f41a8b 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= '#ff7b53', endColorstr='#f41a8b',GradientType=1 );
+        background-size: 89px 200px, cover;
+    }
+    .main-info {
+        max-width: 361px;
+        margin-left: 0;
+        padding: 0 20px;
+    }
+    .start-soon {
+        margin-top: 15px;
+        font-size: 24pt;
+        letter-spacing: 4px;
+    }
+    .main-info-description {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 14pt;
+    }
+    .main-info-calendar {
+        margin-top: 8px;
+    }
+    .twitter-news-content .news-block .date {
+        font-size: 8pt;
+    }
+    .twitter-news-content .news-block .news-text {
+        font-size: 10pt;
+        line-height: 10pt;
+    }
+    .twitter-news-content .news-block-container:nth-child(n){
+        padding-top: 3px;
+        padding-bottom: 4px;
+    }
+    
+    .twitter-news-content .news-blocks {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 350px) {
+    .gerb-text {
+        display: none;
+    }
+}
