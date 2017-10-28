@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+    $(".phone-mask").mask("+7 (999) 999-9999",{autoclear: false});
     // Ключи для api твиттера. Нужно из менеджере приложений твиттера подставить сюда ключи
     KEY = "cVgrzbfD8TioymOgZrr6C1uGT";  //Consumer Key (API Key)
     SECRET = "tQkGp2PqhF2MZLpqoS58Xx444GGUyakPIgM9t73iVlwADFFr2l";  //Consumer Secret (API Secret)
@@ -78,11 +78,31 @@ function formatDate(date) {
 }
 
 function submit_registration() {
-    fio = $('[name="fio"]').val();
-    phone = $('[name="phone"]').val().replace('+');
-    email = $('[name="email"]').val();
-    pass = $('[name="password"]').val();
-    pass_repeat = $('[name="password_repeat"]').val();
+    fio = $('.registration-from [name="fio"]').val();
+    phone = $('.registration-from [name="phone"]').val().replace(/\D/g,'');
+    email = $('.registration-from [name="email"]').val();
+    pass = $('.registration-from [name="password"]').val();
+    pass_repeat = $('.registration-from [name="repeat_password"]').val();
+    if (email !== '' && /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$/g.test(email) === false) {
+        show_error("Электронная почта введена не верно");
+        return false;
+    }
+    if (phone !== '' && /7[0-9]{10}/g.test(phone) === false) {
+        show_error("Номер телефона должен состаять из 11 цифр, где первая цифра - 7");
+        return false;
+    }
+    if (fio === '' || phone === '' || email === '' || pass === '' || pass_repeat === '') {
+        show_error("Все поля формы должны быть заполнены");
+        return false;
+    }
+    if (pass !== pass_repeat) {
+        show_error("Пароли не совпадают");
+        return false;
+    }
+    if ($('[name="agree"]').is(':checked') === false) {
+        show_error("Необходимо поставить галочку о принятии договора оферты");
+        return false;
+    }
     fio_parts = fio.split('/\s*/');
     f = '';
     i = '';
@@ -111,9 +131,12 @@ function submit_registration() {
         dataType: 'application/json',
         contentType: 'application/json',
         data: JSON.stringify(data),
+        crossOrigin: false,
         success(data) {
             if (data.authKey !== undefined) {
                 show_promo_enter(data.authKey);
+            } else if (data.errors !== undefined) {
+                show_error(data.errors[0].message);
             }
         }
     });
@@ -122,6 +145,12 @@ function submit_registration() {
 function show_promo_enter(authKey) {
     $('.promo-code-dialog [name="auth-key"]').val(authKey);
     $.fancybox.open($('.promo-code-dialog'));
+}
+
+function show_error(msg) {
+    $('.error-message').text('');
+    $('.error-message').text(msg);
+    $.fancybox.open($('.error-message-box'));
 }
 
 function send_promo_code() {
@@ -140,6 +169,8 @@ function send_promo_code() {
         success(data) {
             if (data.success !== undefined && data.success == true) {
                 $.fancybox.close();
+            } else if (data.errors !== undefined) {
+                show_error(data.errors[0].message);
             }
         }
     });

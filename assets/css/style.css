@@ -476,6 +476,10 @@ header {
     line-height: 16pt;
 }
 
+.error-message-box {
+    color: #434343;
+}
+
 @media (min-width: 768px) and (max-width: 1200px) {
     .twitter-news-content .news-block .news-text {
         font-size: 12pt;
@@ -678,7 +682,7 @@ header {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 400px) and (min-height: 500px){
     .logo {
         font-size: 35px;
         width: 154px;
@@ -729,9 +733,98 @@ header {
         margin-top: 0px;
     }
 }
+@media (max-width: 400px) and (max-height: 500px){
+    .animated-promo-car {
+        background-position: -320px;
+        background-size: cover;
+        height: 210px;
+        background: url(../images/png/car.png) no-repeat;
+    }
+    .twitter-news-content .news-block .news-text {
+        font-size: 10pt;
+        line-height: 10pt;
+    }
+}
 
 @media (max-width: 350px) {
     .gerb-text {
         display: none;
+    }
+}
+
+@media (max-height: 546px) {
+    .twitter-news-content .news-block-container:not(:first-child){
+        display: none;
+    }
+    .reg-form-name {
+        font-size: 13pt;
+        margin-top: 20px;
+    }
+    .custom-input label.active {
+        top: -8px;
+        font-size: 10px;
+    }
+    .reg-form-inputs .text-input {
+        height: 21px;
+    }
+    .registration-from {
+        margin-top: 20px;
+    }
+}
+
+@media (max-height: 500px) {
+    .animated-promo-car {
+        background-position: -95px;
+        background-size: contain;
+        height: 210px;
+    }
+    .start-soon {
+        font-size: 22pt;
+        margin-top: 23px;
+    }
+    .main-info-description {
+        font-size: 16pt;
+        margin-top: 11px;
+    }
+    .start-date {
+        margin-top: 10px;
+    }
+    .main-promo-price-free {
+        font-size: 13pt;
+        line-height: 19px;
+    }
+    .main-promo-price-tariff {
+        margin: 3px;
+        line-height: 12pt;
+    }
+}
+@media (max-height: 470px) {
+    .news-blocks {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) and (max-height: 400px){
+    .reg-form-name {
+        font-size: 13pt;
+        margin-top: 3px;
+    }
+    .reg-form-free {
+        font-size: 9pt;
+        margin: 0px;
+        height: 14px;
+    }
+    .registration-from {
+        margin-top: 0px;
+    }
+    .reg-form-inputs .input-container {
+        margin-bottom: 5px;
+    }
+    .custom-input label {
+        font-size: 11px;
+    }
+    .reg-form-inputs .text-input {
+        font-size: 11pt;
+        height: 16px;
     }
 }

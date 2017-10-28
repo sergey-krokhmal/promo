@@ -6,7 +6,7 @@
         <script src="assets/libs/jquery/jquery-3.2.1.min.js"></script>
         <script src="assets/libs/fancybox/jquery.fancybox.min.js"></script>
         <script src="assets/libs/onepage-scroll/jquery.onepage-scroll.min.js"></script>
-        <!--script src="assets/libs/jquery.maskedinput.min.js"></script-->
+        <script src="assets/libs/jquery.maskedinput.min.js"></script>
         <script src="assets/libs/phanimate/phanimate.jquery.js"></script>
         <script src="assets/libs/codebird.js"></script>
         <script src="assets/js/script.js"></script>
@@ -164,7 +164,15 @@
                 <input class="form-control" name="promo-code"/>
             </div>
             <div class="form-group">
-                <button type="button" class="cool-button" style="width: 100%" onclick="send_promo_code">Отправить</button>
+                <button type="button" class="cool-button" style="width: 100%" onclick="send_promo_code()">Отправить</button>
+            </div>
+        </div>
+        <div data-fancybox style="display: none;" class="error-message-box">
+            <h3 class="danger">Ошибка</h3>
+            <div class="alert alert-danger " role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Ошибка:</span>
+              <span class="error-message"></span>
             </div>
         </div>
     </body>
