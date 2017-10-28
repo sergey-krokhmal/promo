@@ -379,6 +379,7 @@ header {
     font-weight: normal;
     color: #848484;
     padding-left: 8px;
+    width: 200px;
 }
 
 .cool-button {
@@ -752,10 +753,13 @@ header {
     }
 }
 
-@media (max-height: 546px) {
+@media (max-height: 546px) and (max-width: 768px){
     .twitter-news-content .news-block-container:not(:first-child){
         display: none;
     }
+}
+
+@media (max-height: 546px) {
     .reg-form-name {
         font-size: 13pt;
         margin-top: 20px;
@@ -826,5 +830,49 @@ header {
     .reg-form-inputs .text-input {
         font-size: 11pt;
         height: 16px;
+    }
+}
+
+@media (max-width: 768px) and (max-height: 360px){
+    .reg-form-inputs .checkbox-container .checkbox-input-label {
+        width: 250px;
+    }
+    .animated-promo-car {
+        background-position: 0px;
+        background-size: contain;
+        height: 164px;
+    }
+    .start-soon {
+        font-size: 19pt;
+        margin-top: 17px;
+    }
+    .main-info-description {
+        font-size: 13pt;
+        margin-top: 10px;
+    }
+    .main-info-calendar {
+        font-size: 23pt;
+    }
+    .start-date-text {
+        font-size: 10pt;
+    }
+    .start-date {
+        margin-top: 10px;
+    }
+    .main-promo-price-free {
+        font-size: 11pt;
+        line-height: 15px;
+    }
+    .main-promo-price-tariff {
+        margin: 1px;
+        line-height: 10pt;
+        font-size: 8pt;
+    }
+    .top-margin-reg-form {
+        height: 37px;
+    }
+    .q {
+        display: inline-block;
+        vertical-align: top;
     }
 }
